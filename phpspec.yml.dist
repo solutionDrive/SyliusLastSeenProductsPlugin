@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: SolutionDrive\SyliusLastSeenProductsPlugin
+        psr4_prefix: SolutionDrive\SyliusLastSeenProductsPlugin
