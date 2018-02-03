@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by solutionDrive GmbH.
- *
- * @author   :  Vladislav Sultanov <sultanov@solutionDrive.de>
- * @date     :  03.02.18
- * @time     :  11:42
- * @copyright:  2018 solutionDrive GmbH
- */
 
 namespace Tests\SolutionDrive\SyliusLastSeenProductsPlugin\Behat\Context;
 

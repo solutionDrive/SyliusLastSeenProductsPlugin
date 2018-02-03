@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by solutionDrive GmbH
- *
- * @author    lei wang <wang@solutiondrive.de>
- * @date      03.02.18
- * @time:     12:14
- * @copyright 2018 solutionDrive GmbH
- */
 
 declare(strict_types=1);
 
