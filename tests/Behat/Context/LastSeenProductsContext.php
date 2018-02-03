@@ -45,7 +45,8 @@ class LastSeenProductsContext implements Context
     /**
      * @Then I should see :count last seen products
      */
-    public function iShouldSeeLastSeenProducts($count) {
+    public function iShouldSeeLastSeenProducts($count)
+    {
         $codes = $this->showPage->countLastSeenProductsCodes();
         assertEquals($count, $codes);
     }
@@ -53,15 +54,16 @@ class LastSeenProductsContext implements Context
     /**
      * @And I should see :name product
      */
-    public function iShouldSeeThatProduct($name) {
-
+    public function iShouldSeeThatProduct($name)
+    {
         assertTrue($this->showPage->hasLastSeenProduct($name));
     }
 
     /**
      * @And I should not to see :name product
      */
-    public function iShouldNotToSeeThatProduct($name) {
+    public function iShouldNotToSeeThatProduct($name)
+    {
         assertFalse($this->showPage->hasLastSeenProduct($name));
     }
 }

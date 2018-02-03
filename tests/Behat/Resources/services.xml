@@ -6,8 +6,14 @@
             id="app.behat.context.lastSeenProducts"
             class="Tests\AppBundle\Behat\Context\LastSeenProductsContext"
         >
-            <argument type="service" id="sylius.behat.page.admin.customer.show"/>
+            <argument type="service" id="app.behat.page.showpage"/>
             <tag name="fob.context_service"/>
         </service>
+        <service
+                id="app.behat.page.showpage"
+                class="Tests\AppBundle\Behat\ShowPage\ShowPage"
+                parent="sylius.behat.page.admin.customer.show"
+                public="false"
+        />
     </services>
 </container>
