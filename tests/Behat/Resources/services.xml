@@ -3,17 +3,17 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service
-            id="app.behat.context.lastSeenProducts"
-            class="Tests\AppBundle\Behat\Context\LastSeenProductsContext"
+            id="app.behat.context.last_seen_products"
+            class="Tests\SolutionDrive\SyliusLastSeenProductsPlugin\Behat\Context\LastSeenProductsContext"
         >
-            <argument type="service" id="app.behat.page.showpage"/>
+            <argument type="service" id="app.behat.page.show_page"/>
             <tag name="fob.context_service"/>
         </service>
         <service
-                id="app.behat.page.showpage"
-                class="Tests\AppBundle\Behat\ShowPage\ShowPage"
-                parent="sylius.behat.page.admin.customer.show"
-                public="false"
+            id="app.behat.page.show_page"
+            class="Tests\SolutionDrive\SyliusLastSeenProductsPlugin\Behat\Page\ShowPage"
+            parent="sylius.behat.page.admin.customer.show"
+            public="false"
         />
     </services>
 </container>

@@ -9,7 +9,7 @@ Feature: Showing last seen products on customer show page
         And the store has a product "The Wall"
         And the store has a product "Playstation 4 PRO"
         And the store has a product "Pablo Escobar T-Shirt"
-        And customer "Jon Snow" visited pages of products "The Wall" and "Playstation 4 PRO"
+        And customer "winteriscoming@westeros.com" visited pages of product "The Wall" and product "Playstation 4 PRO"
         And I am logged in as an administrator
 
     @ui

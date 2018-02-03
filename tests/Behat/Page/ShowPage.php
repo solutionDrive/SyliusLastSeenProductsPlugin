@@ -8,7 +8,7 @@
  * @copyright:  2018 solutionDrive GmbH
  */
 
-namespace Tests\AppBundle\Behat\ShowPage;
+namespace Tests\SolutionDrive\SyliusLastSeenProductsPlugin\Behat\Page;
 
 use Sylius\Behat\Page\Admin\Customer\ShowPage as BaseShowPage;
 

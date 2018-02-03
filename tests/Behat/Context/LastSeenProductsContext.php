@@ -8,12 +8,12 @@
  * @copyright:  2018 solutionDrive GmbH
  */
 
-namespace Tests\AppBundle\Behat\Context;
-
+namespace Tests\SolutionDrive\SyliusLastSeenProductsPlugin\Behat\Context;
 
 use Behat\Behat\Context\Context;
-use Sylius\Behat\Page\Admin\Customer\ShowPage;
+use SolutionDrive\SyliusLastSeenProductsPlugin\Entity\Customer;
 use Sylius\Component\Core\Model\ProductInterface;
+use Tests\SolutionDrive\SyliusLastSeenProductsPlugin\Behat\Page\ShowPage;
 use Webmozart\Assert\Assert;
 
 class LastSeenProductsContext implements Context
@@ -29,41 +29,40 @@ class LastSeenProductsContext implements Context
     }
 
     /**
-     * @And customer :customer visited pages of products :product and :product
+     * @When /^(customer "[^"]+") visited pages of (product "[^"]+") and (product "[^"]+")$/
      */
-    public function customerVistitedPagesOfProducts($customer, ...$products)
+    public function customerVisitedPagesOfProducts(Customer $customer, ...$products): void
     {
-        $lastSeenProduct = [];
+        $lastSeenProductCodes = [];
         /** @var ProductInterface $product */
         foreach ($products as $product) {
-            $lastSeenProduct[] = $product->getCode();
+            $lastSeenProductCodes[] = $product->getCode();
         }
 
-        $customer->setLastSeen($lastSeenProduct);
+        $customer->setLastSeen($lastSeenProductCodes);
     }
 
     /**
      * @Then I should see :count last seen products
      */
-    public function iShouldSeeLastSeenProducts($count)
+    public function iShouldSeeLastSeenProducts(int $count): void
     {
-        $codes = $this->showPage->countLastSeenProductsCodes();
-        assertEquals($count, $codes);
+        Assert::same($this->showPage->countLastSeenProductsCodes(), $count);
     }
 
     /**
-     * @And I should see :name product
+     * @When I should see :name product
      */
-    public function iShouldSeeThatProduct($name)
+    public function iShouldSeeThatProduct(string $name): void
     {
-        assertTrue($this->showPage->hasLastSeenProduct($name));
+        Assert::true($this->showPage->hasLastSeenProduct($name));
     }
 
     /**
-     * @And I should not to see :name product
+     * @When I should not see :name product
      */
-    public function iShouldNotToSeeThatProduct($name)
+    public function iShouldNotToSeeThatProduct(string $name): void
     {
-        assertFalse($this->showPage->hasLastSeenProduct($name));
+        Assert::false($this->showPage->hasLastSeenProduct($name));
     }
 }

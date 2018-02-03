@@ -4,11 +4,16 @@ default:
     suites:
         last_seen_products:
             contexts_services:
+                - sylius.behat.context.hook.doctrine_orm
+
                 - sylius.behat.context.setup.customer
                 - sylius.behat.context.setup.product
                 - sylius.behat.context.setup.admin_security
 
-                - app.behat.context.lastSeenProducts
+                - sylius.behat.context.transform.customer
+                - sylius.behat.context.transform.product
+
+                - app.behat.context.last_seen_products
 
                 - sylius.behat.context.ui.admin.managing_customers
             filters:
