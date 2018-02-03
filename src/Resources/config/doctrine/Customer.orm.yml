@@ -1,0 +1,7 @@
+SolutionDrive\SyliusLastSeenProductsPlugin\Entity\Customer:
+    type: entity
+    table: sylius_customer
+    fields:
+        lastSeen:
+            type: json
+            nullable: true
